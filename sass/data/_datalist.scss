@@ -1,0 +1,151 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2018
+// @license   : MIT
+
+.ui-datalist {
+  grid-area: content;
+  padding: $base-spacing;
+
+  &__wrapper {
+    align-items: start;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, 45rem);
+    justify-content: center;
+  }
+
+  &--stretch &__wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(45rem, 1fr));
+  }
+
+  &--vertical &__wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  }
+
+  &--vertical &__card {
+    grid-template-areas: "avatar card-title toolbox" "avatar card-meta toolbox" "avatar datalist toolbox" "content content content";
+    grid-template-columns: auto minmax(10rem, 1fr) auto;
+    grid-template-rows: minmax(3em, max-content) auto auto;
+  }
+
+  &__card {
+    cursor: default;
+    display: grid;
+    grid-template-areas: "avatar card-title datalist toolbox" "avatar card-meta datalist toolbox" "content content content content";
+    grid-template-columns: auto 15rem 1fr auto;
+    grid-template-rows: minmax(3em, max-content) auto auto auto;
+
+    > .ui-avatar {
+      grid-area: avatar;
+    }
+
+    > .ui-card__content {
+      grid-area: content;
+    }
+
+    > .ui-card__title {
+      font-size: 1.5em;
+      grid-area: card-title;
+    }
+
+    > .ui-card__meta {
+      align-self: start;
+      flex-wrap: wrap;
+      font-size: 0.9em;
+      grid-area: card-meta;
+      line-height: 1;
+
+      > span {
+        flex: 100%;
+      }
+    }
+
+    .ui-card__content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      transition: max-height 0.5s;
+
+      &::before {
+        @include position(absolute, 0 0 null);
+        content: "";
+        z-index: 1;
+        @extend %hr;
+      }
+    }
+
+    &[data-open="true"] .ui-card__content {
+      max-height: 30rem;
+      overflow: auto;
+    }
+
+    &[href] {
+      cursor: pointer;
+    }
+  }
+
+  .ui-avatar {
+    font-size: 2rem;
+    line-height: 0.8;
+
+    .ui-icon {
+      padding: 0.5em;
+    }
+
+    img {
+      height: 2em;
+      overflow: hidden;
+      width: 2em;
+    }
+
+    &--round {
+      align-self: start;
+      border-radius: 2em;
+      margin: 0.25em;
+      overflow: hidden;
+
+      img {
+        border-radius: 2em;
+      }
+
+      .ui-icon {
+        padding: 0.25em;
+      }
+    }
+  }
+
+  &__table {
+    display: grid;
+    grid-area: datalist;
+    grid-auto-flow: row;
+    grid-gap: 0.5em 1em;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, max-content));
+    padding: 1em;
+
+    > * {
+      display: none;
+    }
+
+    data {
+      display: block;
+
+      &::before {
+        content: attr(label);
+        display: block;
+        font-size: 0.75em;
+      }
+    }
+  }
+
+  &__toolbox {
+    grid-area: toolbox;
+    padding: 0.5em;
+    pointer-events: none;
+
+    .ui-btn__inner {
+      font-size: 0.8em;
+    }
+  }
+}

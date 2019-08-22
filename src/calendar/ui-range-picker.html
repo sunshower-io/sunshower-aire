@@ -1,0 +1,75 @@
+<template class="ui-calendar">
+  <div class="ui-calendar__range">
+    <div>
+      <calendar-head
+        click.delegate="startHeaderClicked($event)"
+        config.bind="startHeaderOptions"
+        show-first-last.bind="startPage === VIEWS.DAYS"
+      >${startTitle}
+      </calendar-head>
+      <days-page
+        if.bind="startPage === VIEWS.DAYS"
+        month.bind="startMonth"
+        config.to-view="config"
+        mouseover.delegate="hilightDate($event)"
+        click.delegate="selectDate($event)"
+      ></days-page>
+      <months-page
+        if.bind="startPage === VIEWS.MONTHS"
+        month.bind="startMonth"
+        config.to-view="config"
+        click.delegate="selectStartMonth($event)"
+      ></months-page>
+      <years-page
+        if.bind="startPage === VIEWS.YEARS"
+        month.bind="startMonth"
+        config.to-view="config"
+        click.delegate="selectStartMonth($event)"
+      ></years-page>
+    </div>
+    <ui-divider></ui-divider>
+    <div>
+      <calendar-head
+        click.delegate="endHeaderClicked($event)"
+        config.bind="endHeaderOptions"
+        show-first-last.bind="endPage === VIEWS.DAYS"
+      >${endTitle}
+      </calendar-head>
+      <days-page
+        if.bind="endPage === VIEWS.DAYS"
+        month.bind="endMonth"
+        config.to-view="config"
+        mouseover.delegate="hilightDate($event)"
+        click.delegate="selectDate($event)"
+      ></days-page>
+      <months-page
+        if.bind="endPage === VIEWS.MONTHS"
+        month.bind="endMonth"
+        config.to-view="config"
+        click.delegate="selectEndMonth($event)"
+      ></months-page>
+      <years-page
+        if.bind="endPage === VIEWS.YEARS"
+        month.bind="endMonth"
+        config.to-view="config"
+        click.delegate="selectEndMonth($event)"
+      ></years-page>
+    </div>
+  </div>
+  <div class="ui-calendar__footer">
+    <div class="ui-calendar__tags">
+      <a
+        class="ui-calendar__tag"
+        repeat.for="preset of datePresets"
+        data-active.bind="preset.preset === date"
+        click.trigger="selectPreset(preset.preset)"
+      >${preset.label}</a>
+    </div>
+    <a
+      if.bind="selecting || startPage !== VIEWS.DAYS || endPage !== VIEWS.DAYS"
+      class="ui-calendar__tag cancel"
+      click.trigger="cancelSelection()"
+    >Cancel</a
+    >
+  </div>
+</template>

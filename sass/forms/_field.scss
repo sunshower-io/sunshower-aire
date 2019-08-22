@@ -1,0 +1,140 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-field {
+  align-content: start;
+  display: grid;
+  flex: 1 1 12rem;
+  grid-auto-flow: row;
+  line-height: 1;
+  margin: var(--gutter);
+  min-width: 12rem;
+
+  $base: unquote(".ui-field");
+
+  &--inline {
+    @include min-breakpoint(md) {
+      --min-width: 15rem;
+      grid-template-columns: minmax(6rem, max-content) minmax(var(--min-width), 1fr);
+
+      #{$base}__label {
+        justify-self: end;
+        padding: 0.75rem 0.25rem 0.25rem;
+      }
+
+      .ui-input,
+      .ui-input__info,
+      #{$base}__wrapper {
+        grid-column: 2;
+      }
+    }
+  }
+
+  &--required &__label::after {
+    content: "\2749";
+  }
+
+  &--nolabel &__label {
+    display: none;
+  }
+
+  &__label {
+    @include ellipsis();
+    font-size: 0.8rem;
+    grid-column: 1;
+    justify-self: start;
+    padding: 0.25rem;
+    position: relative;
+
+    &::after {
+      content: " ";
+      display: inline-block;
+      font-family: serif;
+      font-size: 0.75em;
+      font-weight: 100;
+      min-width: 1rem;
+      padding: 0 4px;
+      vertical-align: middle;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    grid-column: 1;
+    min-height: 2rem;
+    position: relative;
+    transition: width 0.5s;
+
+    > .ui-btn__wrapper {
+      align-self: stretch;
+      font-size: 0.8em;
+      margin: 0;
+
+      &:first-child .ui-btn {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      &:last-child .ui-btn {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+    .ui-input {
+      &:not(:last-child) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      &:not(:first-child) {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+
+    .ui-dropdown:last-child {
+      flex: 1 1 2em;
+    }
+  }
+
+  &--plain &__wrapper,
+  &--plain {
+
+    .ui-input {
+      input,
+      textarea {
+        cursor: default;
+        height: auto;
+        resize: none;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &__drop-handle,
+      &__counter,
+      &__error,
+      &__clear {
+        display: none;
+      }
+    }
+
+    .ui-dropdown {
+      .ui-menu__item__caret {
+        visibility: hidden;
+      }
+    }
+  }
+
+  & > &__wrapper + &__wrapper,
+  & > &__wrapper + .ui-input,
+  & > .ui-input + &__wrapper,
+  & > .ui-input + .ui-input {
+    margin-top: 1px;
+  }
+}

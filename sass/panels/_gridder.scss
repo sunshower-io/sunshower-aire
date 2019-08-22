@@ -1,0 +1,116 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-gridder {
+  --gridder-gap: 4px;
+  --gridder-col-count: 12;
+  --gridder-row-size: 100px;
+
+  grid-area: content;
+  @extend .ui-scroll;
+
+  &__container,
+  &__overlay {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: var(--gridder-row-size);
+    grid-template-columns: repeat(var(--gridder-col-count), minmax(100px, 1fr));
+    min-width: 100%;
+    padding: calc(var(--gridder-gap) / 2);
+    place-content: stretch;
+    position: relative;
+  }
+
+  &__cell {
+    align-self: stretch;
+    display: grid;
+    margin: var(--gridder-gap);
+    position: relative;
+
+    > * {
+      align-self: stretch;
+      // stylelint-disable-next-line
+      min-width: unset !important;
+    }
+
+    .ui-panel__header[data-autohide="true"] {
+      left: 0;
+      max-height: 8px;
+      opacity: 0.05;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 5;
+
+      &:hover {
+        max-height: unset;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__ghost {
+    grid-column-start: auto;
+    grid-row-start: auto;
+    pointer-events: none;
+    position: absolute;
+    z-index: 50;
+  }
+
+  &__cell:hover &__move,
+  &__cell:hover &__resize {
+    display: block;
+  }
+
+  &__move {
+    cursor: grab;
+    display: none;
+    font-size: 16px;
+    line-height: 1;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    z-index: 100;
+
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__resize {
+    bottom: 0;
+    cursor: nwse-resize;
+    display: none;
+    line-height: 0.75;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+
+    &::after {
+      font-size: 2em;
+      content: "\231F";
+    }
+
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  &__overlay {
+    @include position(absolute, 0);
+    display: none;
+    z-index: 1;
+  }
+}

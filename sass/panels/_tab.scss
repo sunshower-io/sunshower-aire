@@ -1,0 +1,152 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-tab {
+  @extend %ui-section;
+
+  &[data-active="false"],
+  &[data-hide="true"] {
+    display: none;
+  }
+
+  &__panel {
+    display: grid;
+    grid-area: content;
+    grid-template-areas: "tabbar" "body";
+    grid-template-rows: auto 1fr;
+
+
+    &[data-align="bottom"] {
+      grid-template-areas: "body" "tabbar";
+      grid-template-rows: 1fr auto;
+
+      .ui-tab__bar {
+        margin: -3px 0 0;
+      }
+
+      .ui-tab__button {
+        margin: 0 2px 3px;
+      }
+    }
+  }
+
+  &__bar {
+    align-items: center;
+    display: grid;
+    grid-area: tabbar;
+    grid-template-columns: auto 1fr auto auto;
+    justify-content: start;
+    margin-bottom: -2px;
+
+    &__wrapper {
+      align-items: flex-end;
+      display: flex;
+      flex-flow: row nowrap;
+      overflow: hidden;
+    }
+
+    &__start,
+    &__end {
+      padding: 0 0.25em;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    align-items: center;
+    border-radius: $base-border-radius;
+    cursor: pointer;
+    display: grid;
+    flex: 0 0 auto;
+    grid-template-areas: "icon label close";
+    grid-template-columns: auto auto auto;
+    line-height: 1;
+    margin: 3px 2px 0;
+    max-width: 10rem;
+    padding: 0.5em 0;
+    position: relative;
+
+    &__label {
+      @include ellipsis();
+
+      &:first-child {
+        @include property-prefix(padding-start, 0.75em);
+      }
+
+      &:last-child {
+        @include property-prefix(padding-end, 0.75em);
+      }
+    }
+
+    &__icon {
+      &:first-child {
+        @include property-prefix(padding-start, 0.75em);
+      }
+
+      &:last-child {
+        @include property-prefix(padding-end, 0.75em);
+      }
+
+      &:not(:last-child) {
+        &::after {
+          content: "\0020";
+          display: inline-block;
+        }
+      }
+    }
+
+    &__close {
+      font-size: 0.8rem;
+      line-height: 0.1;
+      margin: 0 0.5em;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &[data-active="true"] {
+      font-weight: 500;
+      z-index: 2;
+    }
+
+    &[data-disabled="true"] {
+      box-shadow: none;
+      pointer-events: none;
+
+      &::before {
+        content: "";
+        cursor: not-allowed;
+        opacity: 0.25;
+        @include position(absolute, 0);
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-area: body;
+    grid-template-areas: "content";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    > .ui-section,
+    > .ui-section__content,
+    > .ui-router-view {
+      z-index: 5;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+}

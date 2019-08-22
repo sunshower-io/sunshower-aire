@@ -1,0 +1,13 @@
+<template class="ui-datalist ui-scroll--y">
+  <slot></slot>
+  <div class="ui-datalist__wrapper">
+
+    <template repeat.for="record of dataSource">
+      <div ref="el" show.one-time="compileTemplate(el, record)"></div>
+    </template>
+
+  </div>
+  <div class="ui-datalist__loader" if.bind="isLoading">
+    <ui-svg-icon icon="busy" class="ui-anim--spin"></ui-svg-icon>
+  </div>
+</template>

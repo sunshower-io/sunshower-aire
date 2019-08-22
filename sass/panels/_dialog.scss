@@ -1,0 +1,82 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2018
+// @license   : MIT
+
+.ui-dialog {
+  border-radius: $base-border-radius;
+  pointer-events: all;
+  position: absolute;
+  z-index: 102;
+
+  .ui-panel__header {
+    font-weight: $font-weight-medium;
+    min-height: 2rem;
+
+    &__actions {
+      .ui-dlg--tool {
+        border-radius: 1rem;
+        margin: 0 1px;
+        overflow: hidden;
+
+        .ui-btn {
+          font-size: 0.75rem;
+          overflow: hidden;
+
+          .ui-icon {
+            border-radius: 1rem;
+            margin: 0;
+          }
+
+          &:hover .ui-icon {
+          }
+        }
+
+        &[data-disabled="true"] {
+          .ui-icon {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    &[data-modal="true"] {
+      @include position(fixed, 0);
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      place-content: center;
+      pointer-events: all;
+      z-index: 103;
+
+      .ui-dialog {
+        margin: 1rem;
+        position: relative;
+      }
+    }
+
+    &[data-minimized="true"] .ui-dialog {
+      display: none;
+    }
+
+    &[data-active="false"] .ui-dialog {
+      z-index: 101;
+
+      .ui-panel__header {
+
+        .ui-dlg--tool:not(:hover) {
+          .ui-icon {
+            opacity: 0.5;
+          }
+        }
+      }
+      .ui-panel__body,
+      .ui-footer,
+      .ui-header {
+        opacity: 0.5;
+      }
+    }
+  }
+}

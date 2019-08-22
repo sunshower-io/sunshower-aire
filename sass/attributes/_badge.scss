@@ -1,0 +1,22 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2018
+// @license   : MIT
+
+.ui-badge {
+  border-radius: 1em;
+  display: inline-grid;
+  font-size: 0.7em;
+  line-height: 1.5em;
+  margin: 0.25rem;
+  overflow: hidden;
+  padding: 0 0.5em;
+  vertical-align: middle;
+
+  &--md {
+    font-size: 1em;
+  }
+  &--lg {
+    font-size: 1.2em;
+  }
+}

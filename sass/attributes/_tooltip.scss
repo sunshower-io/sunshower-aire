@@ -1,0 +1,81 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-tooltip {
+  border-radius: $base-border-radius;
+  font-size: 0.8em;
+  margin-top: -0.5em;
+  min-width: 2em;
+  opacity: 0;
+  padding: 0.5em 1rem;
+  visibility: hidden;
+  white-space: nowrap;
+  z-index: 5000;
+  @include position(fixed, 0 null null 0);
+  @include transition(opacity 500ms);
+
+  &::after {
+    border: 1em solid transparent;
+    content: "";
+    display: block;
+    height: 1em;
+    margin: auto;
+    position: absolute;
+    width: 1em;
+    @include position(absolute, -0.75em)
+  }
+
+  &[data-pos="top"] {
+    margin-bottom: 1em;
+
+    &::after {
+      border-bottom-width: 0;
+      border-top-color: currentColor;
+      bottom: -0.5em;
+      top: unset;
+    }
+  }
+
+  &[data-pos="bottom"] {
+    margin-top: 1em;
+
+    &::after {
+      border-bottom-color: currentColor;
+      border-top-width: 0;
+      bottom: unset;
+    }
+  }
+
+  @at-root [dir="rtl"] &[data-pos="left"],
+  &[data-pos="right"] {
+    margin-left: 1em;
+
+    &::after {
+      border-left-width: 0;
+      border-right-color: currentColor;
+      border-right-width: 1em;
+      left: -0.75em;
+      right: unset;
+    }
+  }
+
+  @at-root [dir="rtl"] &[data-pos="right"],
+  &[data-pos="left"] {
+    margin-left: -1em;
+
+    &::after {
+      border-left-color: currentColor;
+      border-left-width: 1em;
+      border-right-width: 0;
+      left: unset;
+      right: -0.75em;
+    }
+  }
+
+  &[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+  }
+}

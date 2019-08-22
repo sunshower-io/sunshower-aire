@@ -1,0 +1,81 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-form {
+  display: block;
+  padding: var(--gutter);
+  @extend .ui-container;
+
+  hr {
+    margin: var(--gutter) 0;
+  }
+
+  .ui-row + .ui-row {
+    margin-top: var(--gutter);
+  }
+
+  .ui-row > .ui-col {
+    flex: 1 1 12rem;
+    margin: var(--gutter);
+
+    > .ui-field,
+    > .ui-fieldset {
+      margin: 0 0 calc(0.5 * var(--gutter));
+    }
+  }
+
+  > .ui-field,
+  > .ui-fieldset {
+    margin: calc(0.5 * var(--gutter));
+  }
+}
+
+.ui-fieldset {
+  display: block;
+  flex: 1 1 12rem;
+  margin: var(--gutter);
+  padding: 0;
+
+  legend {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+
+    .ui-option__control .ui-icon {
+      font-size: 0.9rem;
+    }
+  }
+
+  &[data-open="false"] &__body {
+    display: none;
+  }
+
+  &__body > .ui-row {
+    margin: 0;
+  }
+}
+
+.ui-password-meter {
+  border-radius: 2px;
+  display: block;
+  margin: 1px 0;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-size: 100% 8px;
+    content: "";
+    display: block;
+    height: 4px;
+  }
+
+  &::after {
+    bottom: 0;
+    content: "";
+    left: var(--password-strength);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

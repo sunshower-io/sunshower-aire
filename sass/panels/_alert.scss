@@ -1,0 +1,164 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2018
+// @license   : MIT
+
+.ui-alert {
+  display: grid;
+  justify-content: stretch;
+
+  &__wrapper {
+    align-items: center;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-areas: "icon title body footer close";
+    grid-template-columns: auto auto 1fr auto auto;
+    line-height: 1;
+    margin: 0.25rem;
+    max-width: 80vw;
+    pointer-events: all;
+    position: relative;
+  }
+
+  &__icon {
+    align-self: stretch;
+    font-size: 1.3rem;
+    grid-area: icon;
+    line-height: 1;
+    padding: 0.5rem;
+  }
+
+  &__title {
+    font-weight: $font-weight-bold;
+    grid-area: title;
+    padding: 0.5rem 0;
+  }
+
+  &__body {
+    grid-area: body;
+    padding: 0.5rem 0;
+
+    a {
+      border-bottom: 1px solid currentColor;
+      cursor: pointer;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__footer {
+    align-self: end;
+    grid-area: footer;
+    line-height: 1.25;
+    padding: 0.5rem;
+
+    a {
+      border-bottom: 1px solid currentColor;
+      cursor: pointer;
+      font-weight: $font-weight-medium;
+      margin: 0 0.5rem;
+
+      &:last-child {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  &__close {
+    align-self: start;
+    cursor: pointer;
+    grid-area: close;
+    opacity: 0.5;
+    padding: 0.25rem;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__progress {
+    background-color: currentColor;
+    bottom: -1px;
+    height: 4px;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    transition-property: width;
+    transition-timing-function: ease-in;
+    visibility: hidden;
+    width: 0;
+
+    @at-root [dir="rtl"] & {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &.ui-toast {
+    max-width: 32rem;
+    min-width: 16rem;
+    transform: translate(100%, 0);
+    transition: transform 0.5s;
+    transition-delay: 10ms;
+
+    .ui-alert__wrapper {
+      grid-template-areas: "icon title close" "icon body close" "icon footer close";
+      grid-template-columns: auto 1fr auto;
+    }
+
+    .ui-alert__title {
+      padding: 0.5rem 0 0;
+    }
+
+    .ui-alert__body {
+      padding: 0 0 0.5rem;
+    }
+
+    .ui-alert__footer {
+      justify-self: end;
+      padding: 0.5rem 0;
+    }
+
+    .ui-alert__icon {
+      font-size: 2rem;
+    }
+
+    @at-root [dir="rtl"] & {
+      transform: translate(-100%, 0);
+    }
+  }
+
+  &.ui-message {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    transition-delay: 10ms;
+  }
+
+  &.ui-alert--inline {
+    grid-area: alert;
+    max-height: 0;
+    max-width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    transition-delay: 10ms;
+    @include clearfix();
+
+    .ui-alert__wrapper {
+      margin: 0.5rem auto;
+    }
+  }
+
+  &[data-open="true"] {
+    max-height: 10rem;
+
+    @at-root [dir="rtl"] &,
+    & {
+      transform: translate(0, 0);
+    }
+
+    .ui-alert__progress {
+      visibility: visible;
+      width: 100%;
+    }
+  }
+}

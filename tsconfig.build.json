@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "outDir": "./dist/typings"
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    ".vscode",
+    "dist",
+    "doc",
+    "node_modules",
+    "test"
+  ]
+}

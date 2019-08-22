@@ -1,0 +1,37 @@
+<template class="ui-dropdown">
+  <a
+    data-active.bind="active"
+    disabled.bind="disabled"
+    click.trigger="toggleDrop($event)"
+    class="ui-dropdown__link"
+    data-open.bind="dropEl.isOpen"
+    data-disabled.bind="disabled"
+  >
+    <ui-icon
+      class="ui-dropdown__icon"
+      icon="${iconPrefix} ${model[iconProperty]}"
+      if.bind="iconProperty"
+    ></ui-icon>
+    <div class="ui-input__error" if.bind="errors && errors.length">
+      <ui-svg-icon icon="alert"></ui-svg-icon>
+      <ul>
+        <li repeat.for="err of errors">${err}</li>
+      </ul>
+    </div>
+    <span class="ui-dropdown__label">${selectedLabel}</span>
+    <ui-svg-icon class="ui-dropdown__caret" icon="caret"></ui-svg-icon>
+  </a>
+  <ui-drop view-model.ref="dropEl">
+    <div>
+      <template repeat.for="option of options">
+        <div
+          class="ui-list__item ${(option[valueProperty] || option) === value?'ui-list__item--selected':''}"
+          click.trigger="select(option)"
+        >
+          <ui-icon if.bind="iconProperty" icon="${iconPrefix} ${option[iconProperty]}"></ui-icon>
+          ${option[labelProperty] || option}
+        </div>
+      </template>
+    </div>
+  </ui-drop>
+</template>

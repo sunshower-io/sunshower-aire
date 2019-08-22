@@ -1,0 +1,107 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2018
+// @license   : MIT
+
+.ui-tag {
+  align-items: center;
+  border-radius: 1.5em;
+  display: inline-grid;
+  font-size: 0.8em;
+  grid-template-areas: "avatar label value close";
+  line-height: 1;
+  margin: 0.25rem;
+  overflow: hidden;
+  vertical-align: middle;
+
+  &__icon,
+  &__label,
+  &__avatar {
+    vertical-align: middle;
+  }
+
+  &__icon {
+    border-radius: 1em;
+    grid-area: avatar;
+    height: 1.85em;
+    width: 1.9em;
+
+    &:empty {
+      display: none;
+    }
+
+    img {
+      border-radius: 50%;
+      height: 1.5em;
+      margin: 0.15em;
+      overflow: hidden;
+      width: 1.5em;
+    }
+
+    .ui-icon {
+      border-radius: 1em;
+      font-size: 1.5em;
+      margin: 0;
+      overflow: hidden;
+      padding: 0.125em;
+    }
+    .ui-flag {
+      border-radius: 1em;
+      box-shadow: none;
+      font-size: 1.5em;
+      height: 1em;
+      margin: 0.125em;
+      max-height: 1em;
+      overflow: hidden;
+      width: 1em;
+    }
+  }
+
+  &__label {
+    grid-area: label;
+    padding: 0.42em 0.5em;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__value {
+    grid-area: value;
+    padding: 0.42em 1em;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__label:not(:empty) ~ &__value {
+    padding: 0.42em 0.5em;
+  }
+
+  &__label:not(:empty) + &__icon {
+    border-radius: 0;
+  }
+
+  &__close {
+    align-self: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: $font-weight-light;
+    grid-area: close;
+    line-height: 1;
+    opacity: 0.75;
+    padding: 0 0.2em;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &--md {
+    font-size: 1em;
+  }
+  &--lg {
+    font-size: 1.2em;
+  }
+}

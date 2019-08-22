@@ -1,0 +1,299 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-input {
+  border-radius: $base-border-radius;
+  display: grid;
+  flex: 1 1 1rem;
+  grid-column: 1;
+  grid-template-areas: "addon-start error input counter clear addon-end drop-handle";
+  grid-template-columns: auto auto 1fr auto auto auto auto;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+
+  &.ui-list {
+    grid-template-areas: "addon-start error input counter clear addon-end drop-handle" "list-container . . . . . .";
+  }
+
+  &.ui-phone {
+    grid-template-areas: "addon-start error flag input counter clear addon-end drop-handle";
+    grid-template-columns: auto auto auto 1fr auto auto auto auto;
+
+    > .ui-flag {
+      align-self: center;
+      grid-area: flag;
+    }
+  }
+
+  $base: unquote(".ui-input");
+
+  &--textarea {
+    grid-template-areas: "addon-start error input clear addon-end" "counter . . . .";
+
+    #{$base}__counter {
+      grid-column: span 5;
+      place-content: start;
+    }
+
+    #{$base}__error {
+      align-self: start;
+    }
+
+    #{$base}__clear {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    textarea {
+      @include property-prefix(padding-end, 1.5rem);
+    }
+  }
+
+  &::before {
+    @include position(absolute, 0);
+    opacity: 0.5;
+  }
+
+  &::after {
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0.75;
+    position: absolute;
+    right: 0;
+    width: 0;
+  }
+
+  &:focus-within {
+    &::after {
+      transition: width 0.4s;
+      width: 100%;
+    }
+  }
+
+  &--readonly {
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      cursor: default;
+    }
+  }
+
+  &--disabled {
+    .ui-input__drop-handle {
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+      cursor: not-allowed;
+    }
+  }
+
+  &__addon {
+    display: grid;
+    font-size: map-get($font-sizes, sm);
+    grid-area: addon-start;
+    min-width: 2rem;
+    padding: 0;
+    place-content: center;
+
+    .ui-icon {
+      font-size: 1.3rem;
+    }
+
+    .ui-flag {
+      font-size: 1rem;
+    }
+
+    & + &,
+    &--end {
+      grid-area: addon-end;
+    }
+  }
+
+  > .ui-btn__wrapper {
+    align-self: stretch;
+    font-size: 0.8em;
+    grid-area: addon-end;
+    margin: 0;
+  }
+
+  &__info {
+    grid-column: 1;
+    padding: 0.25rem 0.5rem;
+
+    .ui-row {
+      --gutter: 0;
+    }
+  }
+
+  &__drop-handle,
+  &__counter,
+  &__error,
+  &__clear {
+    display: grid;
+    opacity: 0.5;
+    padding: 0.25rem;
+    place-content: center;
+  }
+
+  &__drop-handle {
+    cursor: pointer;
+    font-size: 1.5em;
+    grid-area: drop-handle;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__clear {
+    cursor: pointer;
+    grid-area: clear;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__error {
+    grid-area: error;
+    opacity: 1;
+    z-index: 5;
+
+    > ul {
+      display: none;
+      font-size: 0.9rem;
+      list-style: none;
+      padding: 0.5em 1em;
+      position: fixed;
+      transform: translateY(calc(1rem));
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    &:hover > ul {
+      display: block;
+    }
+  }
+
+  &__counter {
+    font-size: 0.8rem;
+    grid-area: counter;
+  }
+
+  input,
+  textarea {
+    border: 0;
+    font-size: 1rem;
+    font-weight: $font-weight-light;
+    grid-area: input;
+    letter-spacing: 0.01em;
+    line-height: 2rem;
+    margin: 0;
+    outline: none;
+    padding: 0 0.5rem;
+    @include text-select();
+  }
+
+  textarea {
+    line-height: 1.5rem;
+    min-height: 1.5rem * 2;
+    resize: vertical;
+  }
+
+  input[type="file"] {
+    line-height: 1;
+    padding: 0.358rem 0.5rem;
+  }
+
+  &-file {
+    &__dropzone {
+      display: grid;
+      font-size: 1.25rem;
+      font-weight: $font-weight-light;
+      grid-area: input;
+      grid-gap: 0.5rem;
+      grid-template-columns: auto auto;
+      padding: 3rem 0;
+      place-content: center;
+      text-align: center;
+
+      .ui-icon {
+        font-size: 3rem;
+      }
+
+      span {
+        pointer-events: none;
+      }
+    }
+
+    &__list {
+      grid-area: 2 / 1 / 2 / 7;
+
+      > div {
+        align-items: start;
+        display: grid;
+        grid-gap: 8px;
+        grid-template-columns: auto auto 1fr;
+        line-height: 1.5;
+        margin: 4px 0;
+        overflow: hidden;
+
+        > label {
+          @include ellipsis();
+        }
+      }
+    }
+  }
+
+  &__tags {
+    align-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    grid-area: input;
+
+    .ui-tag {
+      align-items: center;
+      border-radius: 2px;
+      display: grid;
+      font-size: 0.8rem;
+      grid-gap: 4px;
+      grid-template-columns: auto auto;
+      line-height: 1.5rem;
+      margin: 0.25rem;
+      overflow: hidden;
+      padding: 0 0.25rem;
+
+      .ui-badge {
+        float: right;
+      }
+
+      &__close {
+        cursor: pointer;
+        font-size: 1rem;
+        line-height: 1.1;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    input {
+      flex: 1 1 4em;
+    }
+  }
+}

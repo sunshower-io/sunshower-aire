@@ -1,0 +1,84 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2019
+// @license   : MIT
+
+.ui-list {
+  &__container {
+    grid-area: list-container;
+    grid-column-end: 7;
+    max-height: 20rem;
+    @extend .ui-scroll;
+  }
+
+  &__title {
+    font-size: 0.9rem;
+    padding: (0.5 * $base-spacing) $base-spacing;
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: (0.5 * $base-spacing) $base-spacing;
+
+    > .ui-badge {
+      float: right;
+      margin: 0;
+
+      @at-root [dir="rtl"] & {
+        float: left;
+      }
+    }
+
+    &--selected {
+      cursor: default;
+      pointer-events: none;
+
+      u {
+        color: inherit;
+      }
+    }
+
+    &--disabled {
+      cursor: default;
+      opacity: 0.5;
+      pointer-events: none;
+
+      u {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.ui-dropdown {
+  display: grid;
+
+  &__link {
+    align-items: center;
+    display: grid;
+    grid-template-areas: "error icon label caret";
+    grid-template-columns: auto auto 1fr auto;
+    padding: 0 0.5rem;
+
+    &[data-disabled="true"] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &__icon {
+    font-size: 1.25em;
+    grid-area: icon;
+  }
+
+  &__label {
+    grid-area: label;
+    line-height: 1;
+    padding: 0.5rem 0.25rem;
+    @include property-prefix(margin-end, 0.5rem);
+  }
+
+  &__caret {
+    grid-area: caret;
+  }
+}

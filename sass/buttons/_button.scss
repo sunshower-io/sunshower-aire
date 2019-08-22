@@ -1,0 +1,208 @@
+// @author    : Adarsh Pastakia
+// @version   : 5.0.0
+// @copyright : 2018
+// @license   : MIT
+
+.ui-btn {
+  align-items: center;
+  display: grid;
+  grid-template-areas: "icon label badge caret";
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+  pointer-events: all;
+  position: relative;
+
+  .ui-badge {
+    align-self: center;
+    grid-area: badge;
+  }
+
+  $base: unquote(".ui-btn");
+
+  &::before {
+    content: "";
+    pointer-events: none;
+    z-index: 2;
+    @include position(absolute, 0);
+  }
+
+  &__inner {
+    border-radius: $base-border-radius;
+    display: grid;
+    grid-template-areas: "button divider caret";
+    grid-template-columns: 1fr auto auto;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    display: inline-block;
+    margin: 2px;
+    max-width: 12em;
+    pointer-events: none;
+    position: relative;
+    vertical-align: middle;
+
+    &[data-busy="true"] {
+      #{$base} {
+        pointer-events: none;
+
+        &__inner {
+          cursor: wait;
+          pointer-events: all;
+        }
+      }
+    }
+
+    @at-root #{$base}__group,
+    & {
+      &[data-disabled="true"] {
+
+        #{$base} {
+          pointer-events: none;
+
+          &__inner {
+            box-shadow: none;
+            cursor: not-allowed;
+            opacity: 0.5;
+            pointer-events: all;
+          }
+        }
+      }
+
+      &[data-size="xs"] #{$base}__inner {
+        font-size: map-get($font-sizes, xs);
+      }
+
+      &[data-size="sm"] #{$base}__inner {
+        font-size: map-get($font-sizes, sm);
+      }
+
+      &[data-size="md"] #{$base}__inner {
+        font-size: map-get($font-sizes, md);
+      }
+
+      &[data-size="lg"] #{$base}__inner {
+        font-size: map-get($font-sizes, lg);
+      }
+
+    }
+  }
+
+  &__icon {
+    grid-area: icon;
+    line-height: 0.75;
+    padding: 0.25em;
+
+    .ui-icon {
+      font-size: 1.5em;
+    }
+  }
+
+  .ui-svg-icon {
+    font-size: 1.5em;
+  }
+
+  &__label {
+    font-weight: $font-weight-medium;
+    grid-area: label;
+    line-height: 2;
+    text-align: center;
+    @include ellipsis();
+
+    &:empty {
+      display: none;
+    }
+
+    &:first-child {
+      @include property-prefix(padding-start, 0.5em);
+    }
+
+    &:last-child {
+      @include property-prefix(padding-end, 0.5em);
+    }
+  }
+
+  &__caret {
+    grid-area: caret;
+  }
+
+  &__split {
+    grid-area: caret;
+  }
+
+  &__caret--hide &__caret {
+    display: none;
+  }
+
+  &--block {
+    max-width: none;
+    width: 100%;
+  }
+
+  &__icon--end & {
+    grid-template-areas: "label badge caret icon";
+
+    &__label {
+      padding: 0;
+
+      &:first-child {
+        @include property-prefix(padding-end, 0.5em);
+      }
+
+      &:last-child {
+        @include property-prefix(padding-start, 0.5em);
+      }
+    }
+  }
+
+  &__icon--hilight & {
+    &__label {
+      padding: 0 0.5em;
+    }
+  }
+
+  &__icon--top & {
+    grid-template-areas: "icon icon caret" "label badge caret";
+
+    &__icon {
+      justify-self: stretch;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__label {
+      @include property-prefix(padding-start, 1em, padding-left);
+
+      &:last-child {
+        @include property-prefix(padding-end, 1em, padding-right);
+      }
+    }
+  }
+
+  &__divider {
+    grid-area: divider;
+    margin: 4px 0;
+    width: 1px;
+  }
+
+  // Ripple effect
+  @if ($button-ripple) {
+    &::after {
+      @include position(absolute, 0);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 10000% 10000%;
+      content: "";
+      opacity: 0;
+      transition: background-size 0.4s, opacity 0.2s 0.2s;
+      z-index: 5;
+    }
+    &:active::after {
+      background-size: 0 0;
+      content: "";
+      opacity: 0.3;
+      transition: background-size 0s, opacity 0s 0s;
+    }
+  }
+}

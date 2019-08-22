@@ -1,0 +1,29 @@
+doctype html
+html.theme-light
+  head
+    meta(charset="utf-8")
+    title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    base(href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>")
+    link(rel="shortcut icon" href="/images/logo.png")
+    // imported CSS are concatenated and added automatically
+    link(rel="stylesheet" href="/styles/splash.css")
+  body
+    html
+      body
+        section#aire-splash
+          .left
+            div.wrapper
+              .spinner
+                i
+                i
+                i
+          .right
+            h1 Aire
+            h2 Powerful Components for Beautiful Applications
+
+
+    div(aurelia-app="main")
+    //<% if (htmlWebpackPlugin.options.metadata.server) { %>
+    //<script src="/webpack-dev-server.js"></script>
+    //<% } %>
