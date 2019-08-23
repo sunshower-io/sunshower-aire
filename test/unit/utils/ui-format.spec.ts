@@ -5,7 +5,7 @@
  * @license   : MIT
  */
 
-import { UIFormat } from "sunshower-aire";
+import { UIFormat } from "aire";
 
 describe("ui-format", () => {
   it("should format date", done => {

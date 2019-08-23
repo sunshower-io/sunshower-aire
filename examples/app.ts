@@ -9,7 +9,7 @@ import UIKit from 'uikit';
 
 import { autoinject, PLATFORM } from "aurelia-framework";
 import { Router, RouterConfiguration } from "aurelia-router";
-import { subscribe, UIApplication } from "sunshower-aire";
+import { subscribe, UIApplication } from "aire";
 
 @autoinject()
 export class App {

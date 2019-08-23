@@ -3,7 +3,7 @@ import LOGO                   from "@images/logo.png";
 import {Aurelia, ViewLocator} from "aurelia-framework";
 import {PLATFORM}             from "aurelia-pal";
 import {UIFrameworkConfig}    from "aire";
-// import {UIFrameworkConfig}    from "sunshower-aire";
+// import {UIFrameworkConfig}    from "aire";
 import {App}                  from "./app";
 import environment            from "./environment";
 
@@ -49,7 +49,6 @@ export function configure(aurelia : Aurelia) {
     .start()
     .then(() => aurelia.setRoot(App))
     .then(() => {
-      document.body.style.backgroundImage = 'none';
-      // document.querySelector("#aire-splash").remove();
+      document.querySelector("#aire-splash").remove();
     });
 }

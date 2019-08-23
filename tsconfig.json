@@ -14,8 +14,8 @@
     "skipLibCheck": true,
     "lib": ["es2017", "dom"],
     "paths": {
-      "sunshower-aire/*": ["./src/sunshower-aire/*"],
-      "sunshower-aire": ["./src/sunshower-aire"],
+      "aire/*": ["./src/aire/*"],
+      "aire": ["./src/aire"],
       "@images/*": ["./images/*"]
     }
   },

@@ -4,7 +4,7 @@ import typescript from "rollup-plugin-typescript2";
 
 export default [
   {
-    input: "src/sunshower-aire.ts",
+    input: "src/aire.ts",
     output: [
       {
         dir: "dist/es2015",
@@ -28,7 +28,7 @@ export default [
     ]
   },
   {
-    input: "src/sunshower-aire.ts",
+    input: "src/aire.ts",
     output: [
       {
         dir: "dist/es2017",
@@ -52,12 +52,12 @@ export default [
     ]
   },
   {
-    input: "src/sunshower-aire.ts",
+    input: "src/aire.ts",
     output: [
       {
         dir: "dist/amd",
         format: "amd",
-        id: "sunshower-aire"
+        id: "aire"
       },
       {
         dir: "dist/commonjs",
@@ -89,10 +89,10 @@ export default [
     ]
   },
   {
-    input: "src/sunshower-aire.ts",
+    input: "src/aire.ts",
     output: [
       {
-        file: "dist/umd/sunshower-aire.js",
+        file: "dist/umd/aire.js",
         format: "umd",
         name: "au.uiFramework",
         // defining where the namespace/path could be used to get the exports for Aurelia modules
@@ -137,10 +137,10 @@ export default [
     ]
   },
   {
-    input: "src/sunshower-aire.ts",
+    input: "src/aire.ts",
     output: [
       {
-        file: "dist/umd-es2015/sunshower-aire.js",
+        file: "dist/umd-es2015/aire.js",
         format: "umd",
         name: "au.uiFramework",
         // defining where the namespace/path could be used to get the exports for Aurelia modules

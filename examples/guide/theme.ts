@@ -6,7 +6,7 @@
  */
 
 export class ThemePage {
-  protected theming = `@import "~sunshower-aire/sass/colors";
+  protected theming = `@import "~aire/sass/colors";
 
 $primary: $indigo;
 $secondary: $pink;
@@ -27,6 +27,6 @@ $base-invert: $black; // Change to $white for dark theme
 //* $base-color: mix($gray, $base-invert, 15%);
 //**
 
-@import "~sunshower-aire/sass/sunshower-aire";
+@import "~aire/sass/aire";
 `;
 }

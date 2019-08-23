@@ -1,4 +1,4 @@
-import { serializable, UIDataModel } from "sunshower-aire";
+import { serializable, UIDataModel } from "aire";
 import { ValidationRules } from "aurelia-validation";
 
 export class FormModel extends UIDataModel {

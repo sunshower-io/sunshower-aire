@@ -1,5 +1,5 @@
 {
-  "name": "sunshower-aire",
+  "name": "aire",
   "type": "project:application",
   "bundler": {
     "id": "webpack",

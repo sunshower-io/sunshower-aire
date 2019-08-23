@@ -5,7 +5,7 @@
  * @license   : MIT
  */
 import { autoinject } from "aurelia-framework";
-import { UINotificationService } from "sunshower-aire";
+import { UINotificationService } from "aire";
 
 @autoinject()
 export class DatalistPage {

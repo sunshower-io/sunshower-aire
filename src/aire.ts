@@ -42,23 +42,23 @@ export enum UIResources {
 }
 
 const RESOURCE_LOADER: Record<string, () => Promise<AnyObject>> = {
-  // viewport: () => import("./viewport/ui-viewport").then(m => m.Viewport),
+  viewport: () => import("./viewport/ui-viewport").then(m => m.Viewport),
   page: () => import("./page/ui-page").then(m => m.Page),
-  // icons: () => import("./icons/ui-icons").then(m => m.Icons),
-  // responsive: () => import("./responsive/ui-responsive").then(m => m.Responsive),
-  // shared: () => import("./shared/ui-shared").then(m => m.Shared),
-  // attributes: () => import("./attributes/ui-attributes").then(m => m.Attributes),
-  // valueconverters: () => import("./value-converters/value-converters").then(m => m.ValueConverters),
-  // [UIResources.Buttons]: () => import("./buttons/ui-buttons").then(m => m.Buttons),
-  // [UIResources.Calendar]: () => import("./calendar/ui-calendar").then(m => m.Calendar),
-  // [UIResources.Card]: () => import("./card/ui-card").then(m => m.Card),
-  // [UIResources.DataPanel]: () => import("./data/ui-data-panels").then(m => m.DataPanels),
-  // [UIResources.Forms]: () => import("./forms/ui-forms").then(m => m.Forms),
-  // [UIResources.Gridder]: () => import("./gridder/ui-gridder").then(m => m.Gridder),
-  // [UIResources.Lists]: () => import("./lists/ui-lists").then(m => m.Lists),
-  // [UIResources.Menus]: () => import("./menus/ui-menus").then(m => m.Menus),
-  // [UIResources.Panel]: () => import("./panels/ui-panels").then(m => m.Panels),
-  // [UIResources.TabPanel]: () => import("./tab-panel/ui-tab-panel").then(m => m.TabPanel)
+  icons: () => import("./icons/ui-icons").then(m => m.Icons),
+  responsive: () => import("./responsive/ui-responsive").then(m => m.Responsive),
+  shared: () => import("./shared/ui-shared").then(m => m.Shared),
+  attributes: () => import("./attributes/ui-attributes").then(m => m.Attributes),
+  valueconverters: () => import("./value-converters/value-converters").then(m => m.ValueConverters),
+  [UIResources.Buttons]: () => import("./buttons/ui-buttons").then(m => m.Buttons),
+  [UIResources.Calendar]: () => import("./calendar/ui-calendar").then(m => m.Calendar),
+  [UIResources.Card]: () => import("./card/ui-card").then(m => m.Card),
+  [UIResources.DataPanel]: () => import("./data/ui-data-panels").then(m => m.DataPanels),
+  [UIResources.Forms]: () => import("./forms/ui-forms").then(m => m.Forms),
+  [UIResources.Gridder]: () => import("./gridder/ui-gridder").then(m => m.Gridder),
+  [UIResources.Lists]: () => import("./lists/ui-lists").then(m => m.Lists),
+  [UIResources.Menus]: () => import("./menus/ui-menus").then(m => m.Menus),
+  [UIResources.Panel]: () => import("./panels/ui-panels").then(m => m.Panels),
+  [UIResources.TabPanel]: () => import("./tab-panel/ui-tab-panel").then(m => m.TabPanel)
 };
 
 /**

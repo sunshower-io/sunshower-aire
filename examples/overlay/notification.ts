@@ -5,11 +5,11 @@
  * @license   : MIT
  */
 import { autoinject } from "aurelia-framework";
-import { UINotificationService } from "sunshower-aire";
+import { UINotificationService } from "aire";
 
 @autoinject()
 export class NotificationPage {
-  protected notifJs = `import { UINotificationService } from "sunshower-aire";
+  protected notifJs = `import { UINotificationService } from "aire";
   
 @autoinject()
 export class PageVm {

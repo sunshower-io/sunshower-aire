@@ -7,7 +7,7 @@ export const auconfig = (aurelia, callback?) => {
     .standardConfiguration()
     .plugin(PLATFORM.moduleName("aurelia-validation"))
     .plugin(PLATFORM.moduleName("aurelia-ui-virtualization"))
-    .plugin(PLATFORM.moduleName("sunshower-aire"), callback);
+    .plugin(PLATFORM.moduleName("aire"), callback);
 };
 
 jest.setTimeout(30000);

@@ -1,21 +1,21 @@
 {
-  "name": "sunshower-aire",
+  "name": "aire",
   "description": "An Aurelia UI/UX framework",
   "version": "5.0.0-beta.3",
   "keywords": [
     "ui-framework",
     "desktop-framework",
-    "sunshower-aire"
+    "aire"
   ],
-  "homepage": "https://sunshower-aire.herokuapp.com",
+  "homepage": "https://aire.herokuapp.com",
   "bugs": {
-    "url": "https://github.com/adarshpastakia/sunshower-aire/issues"
+    "url": "https://github.com/adarshpastakia/aire/issues"
   },
   "license": "MIT",
   "author": "Adarsh Pastakia <adarshpastakia@outlook.com> (http://adarshpastakia.github.io/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adarshpastakia/sunshower-aire"
+    "url": "https://github.com/adarshpastakia/aire"
   },
   "dependencies": {
     "aurelia-binding": "^2.3.1",
@@ -117,7 +117,7 @@
     "testFailureExitCode": 0,
     "moduleNameMapper": {
       "^aurelia-binding$": "<rootDir>/node_modules/aurelia-binding",
-      "^sunshower-aire$": "<rootDir>/src/sunshower-aire.ts"
+      "^aire$": "<rootDir>/src/aire.ts"
     },
     "modulePaths": [
       "<rootDir>/src",
@@ -176,8 +176,8 @@
     "bump-version": "npm --no-git-tag-version version",
     "release": "npm run dist && npm run bump-version"
   },
-  "typings": "dist/typings/sunshower-aire.d.ts",
-  "main": "dist/commonjs/sunshower-aire.js",
-  "module": "dist/es2015/sunshower-aire.js",
-  "browser": "dist/umd/sunshower-aire.js"
+  "typings": "dist/typings/aire.d.ts",
+  "main": "dist/commonjs/aire.js",
+  "module": "dist/es2015/aire.js",
+  "browser": "dist/umd/aire.js"
 }

@@ -4,7 +4,7 @@
  * @copyright : 2019
  * @license   : MIT
  */
-import { Countries } from "sunshower-aire";
+import { Countries } from "aire";
 
 export class CountriesPage {
   protected countries = new Map();

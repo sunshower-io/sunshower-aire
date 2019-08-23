@@ -42,14 +42,13 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
       "@base": baseKit,
       "@images": imagesDir,
       "aire$": path.resolve(frameworkDir, "aire"),
-      "aire": path.resolve(frameworkDir, "aire"),
-      // "sunshower-aire$": path.resolve(frameworkDir, "sunshower-aire"),
-      // "sunshower-aire": frameworkDir
+      "aire": frameworkDir
+      // "aire$": path.resolve(frameworkDir, "aire"),
+      // "aire": frameworkDir
     }
   },
   entry: {
     app: ["aurelia-bootstrapper"],
-    // framework: ["sunshower-aire"],
     framework: ["aire"],
     vendor: ["aurelia-framework"]
   },

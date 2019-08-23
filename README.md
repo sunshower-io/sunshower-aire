@@ -3,17 +3,17 @@
 
 ---
 
-Demo Site: [https://sunshower-aire.herokuapp.com](https://sunshower-aire.herokuapp.com)
+Demo Site: [https://aire.herokuapp.com](https://aire.herokuapp.com)
 
 ---
 
-![Stars](https://img.shields.io/github/stars/adarshpastakia/sunshower-aire.svg?logoColor=blue&style=social&logo=github "GitHub Stars")
-![Forks](https://img.shields.io/github/forks/adarshpastakia/sunshower-aire.svg?logoColor=blue&style=social&logo=github "GitHub Forks")
-![Issues](https://img.shields.io/github/issues/adarshpastakia/sunshower-aire.svg?logoColor=blue&style=social&logo=github "GitHub Issues")
+![Stars](https://img.shields.io/github/stars/adarshpastakia/aire.svg?logoColor=blue&style=social&logo=github "GitHub Stars")
+![Forks](https://img.shields.io/github/forks/adarshpastakia/aire.svg?logoColor=blue&style=social&logo=github "GitHub Forks")
+![Issues](https://img.shields.io/github/issues/adarshpastakia/aire.svg?logoColor=blue&style=social&logo=github "GitHub Issues")
 
-![Build](https://img.shields.io/travis/adarshpastakia/sunshower-aire/master.svg?style=popout-square&logo=travis&label= "Travis Build")
-![Coverage](https://img.shields.io/codecov/c/github/adarshpastakia/sunshower-aire/master.svg?style=popout-square&logo=codecov&label= "Code Coverage")
-![NPM Release](https://img.shields.io/npm/v/sunshower-aire/next.svg?style=popout-square&logo=npm&label= "NPM Release")
+![Build](https://img.shields.io/travis/adarshpastakia/aire/master.svg?style=popout-square&logo=travis&label= "Travis Build")
+![Coverage](https://img.shields.io/codecov/c/github/adarshpastakia/aire/master.svg?style=popout-square&logo=codecov&label= "Code Coverage")
+![NPM Release](https://img.shields.io/npm/v/aire/next.svg?style=popout-square&logo=npm&label= "NPM Release")
 
 ---
 
@@ -29,17 +29,17 @@ Demo Site: [https://sunshower-aire.herokuapp.com](https://sunshower-aire.herokua
 
   - NPM
     
-    `npm i sunshower-aire`
+    `npm i aire`
   
   - Yarn
   
-    `yarn add sunshower-aire`
+    `yarn add aire`
 
 * Using plugin as local link
 
-  `sunshower-aire$> npm link`
+  `aire$> npm link`
 
-  `project$> npm link sunshower-aire`
+  `project$> npm link aire`
 
   > webpack.config 
   > ```
