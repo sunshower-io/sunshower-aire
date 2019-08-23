@@ -1,0 +1,38 @@
+.aire-page {
+  width:100%;
+  height:100%;
+  border:1px solid red;
+  display:flex;
+  flex-direction:column;
+  .aire-header {
+    border:1px solid blue;
+    justify-self: flex-start;
+
+    //todo Lisa variable
+    height:32px;
+  }
+  .aire-main {
+    height:100%;
+    width:100%;
+    border: 1px solid green;
+    display:flex;
+    flex-direction: row;
+
+    .aire-content {
+
+      //todo extract mixin
+      width: 100%;
+      height:100%;
+      border:1px solid blue;
+    }
+    .aire-navigation {
+
+      width:64px;
+      justify-self: flex-start;
+      border:1px solid blue;
+    }
+  }
+
+
+
+}

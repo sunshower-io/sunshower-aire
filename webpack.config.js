@@ -43,8 +43,6 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
       "@images": imagesDir,
       "aire$": path.resolve(frameworkDir, "aire"),
       "aire": frameworkDir
-      // "aire$": path.resolve(frameworkDir, "aire"),
-      // "aire": frameworkDir
     }
   },
   entry: {

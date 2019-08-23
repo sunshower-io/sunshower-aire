@@ -6,6 +6,7 @@ import "./libs/string";
 import "./libs/window";
 import { UIAppConfig } from "./utils/ui-app-config";
 import { UIInternal } from "./utils/ui-internal";
+import 'sass/aire.scss';
 
 export * from "./models/ui-data-model";
 export * from "./services/ui-application";
@@ -42,6 +43,7 @@ export enum UIResources {
 }
 
 const RESOURCE_LOADER: Record<string, () => Promise<AnyObject>> = {
+  airePage: () => import('./page/aire-page').then(t => t.AirePage),
   viewport: () => import("./viewport/ui-viewport").then(m => m.Viewport),
   page: () => import("./page/ui-page").then(m => m.Page),
   icons: () => import("./icons/ui-icons").then(m => m.Icons),
@@ -70,6 +72,7 @@ const RESOURCE_LOADER: Record<string, () => Promise<AnyObject>> = {
  */
 export class UIFrameworkConfig {
   private resources = [
+    "airePage",
     "viewport",
     "page",
     "icons",

@@ -47,8 +47,5 @@ export function configure(aurelia : Aurelia) {
 
   return aurelia
     .start()
-    .then(() => aurelia.setRoot(App))
-    .then(() => {
-      document.querySelector("#aire-splash").remove();
-    });
+    .then(() => aurelia.setRoot(App));
 }

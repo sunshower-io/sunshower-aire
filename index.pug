@@ -8,7 +8,7 @@ html.theme-light
     link(rel="shortcut icon" href="/images/logo.png")
     // imported CSS are concatenated and added automatically
     link(rel="stylesheet" href="/styles/splash.css")
-  body
+  body(aurelia-app="main")
     section#aire-splash
       .left
         div.wrapper
@@ -19,7 +19,6 @@ html.theme-light
       .right
         h1 Aire
         h2 Powerful Components for Beautiful Applications
-    div(aurelia-app="main")
 
     //<% if (htmlWebpackPlugin.options.metadata.server) { %>
     //<script src="/webpack-dev-server.js"></script>

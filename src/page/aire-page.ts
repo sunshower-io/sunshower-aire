@@ -1,8 +1,15 @@
-import {customElement, useView} from "aurelia-framework";
-import {PLATFORM} from 'aurelia-pal';
 
+import {view} from 'aire/core/view';
+
+import './aire-page.scss';
+
+import {
+  bindable,
+  customElement
+} from "aurelia-framework";
+
+@view('aire/page/aire-page')
 @customElement('aire-page')
-// @useView(PLATFORM.moduleName('src/page/aire-page.html'))
 export class AirePage {
 
 }

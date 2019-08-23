@@ -1,6 +1,5 @@
 
 import {bindable, customElement, inlineView, useView} from "aurelia-framework";
-import {PLATFORM}                                     from 'aurelia-framework';
 import {view}                                         from "aire/core/view";
 import {UIContent}                                    from "./ui-content";
 import {UISection}                                    from "./ui-section";
@@ -8,7 +7,6 @@ import {UISectionFoot}                                from "./ui-section-foot";
 import {UISectionHead}                                from "./ui-section-head";
 
 @customElement("ui-page")
-// @useView(PLATFORM.moduleName('aire/page/ui-page.pug'))
 @view('aire/page/ui-page')
 class UIPage {
   @bindable()
