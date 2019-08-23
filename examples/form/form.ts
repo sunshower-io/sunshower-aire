@@ -7,7 +7,7 @@
 import AVATAR_F from "@images/avatar-female.svg";
 import AVATAR_M from "@images/avatar-male.svg";
 import { autoinject } from "aurelia-framework";
-import { Countries } from "aurelia-ui-framework";
+import { Countries } from "sunshower-aire";
 import { ValidationController, ValidationControllerFactory } from "aurelia-validation";
 import { FormModel } from "./model";
 

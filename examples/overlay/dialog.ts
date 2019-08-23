@@ -5,7 +5,7 @@
  * @license   : MIT
  */
 import { autoinject } from "aurelia-framework";
-import { UIDialogService } from "aurelia-ui-framework";
+import { UIDialogService } from "sunshower-aire";
 import { DlgTester } from "./dlgTester";
 
 @autoinject()
@@ -17,13 +17,13 @@ export class DialogPage {
     </ui-content>
   </ui-dialog>
 </template>`;
-  protected dialogJs = `import { UIDialogService } from "aurelia-ui-framework";
+  protected dialogJs = `import { UIDialogService } from "sunshower-aire";
 
 @autoinject()
 export class MyDialog {
   
 }`;
-  protected pageJs = `import { UIDialogService } from "aurelia-ui-framework";
+  protected pageJs = `import { UIDialogService } from "sunshower-aire";
 import { MyDialog } from "./dialog";
 
 @autoinject()

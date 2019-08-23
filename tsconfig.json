@@ -14,8 +14,8 @@
     "skipLibCheck": true,
     "lib": ["es2017", "dom"],
     "paths": {
-      "aurelia-ui-framework/*": ["./src/aurelia-ui-framework/*"],
-      "aurelia-ui-framework": ["./src/aurelia-ui-framework"],
+      "sunshower-aire/*": ["./src/sunshower-aire/*"],
+      "sunshower-aire": ["./src/sunshower-aire"],
       "@images/*": ["./images/*"]
     }
   },

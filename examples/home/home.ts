@@ -14,7 +14,7 @@ import INPUT from "@images/feature-input.svg";
 import LAYOUT from "@images/feature-layout.svg";
 import THEME from "@images/feature-theme.svg";
 import { autoinject } from "aurelia-framework";
-import { broadcast, UIApplication } from "aurelia-ui-framework";
+import { broadcast, UIApplication } from "sunshower-aire";
 
 @autoinject()
 export class AppHome {

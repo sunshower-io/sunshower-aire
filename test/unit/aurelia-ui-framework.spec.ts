@@ -8,10 +8,10 @@
 import { bootstrap } from "aurelia-bootstrapper";
 import { Container } from "aurelia-framework";
 import { StageComponent } from "aurelia-testing";
-import { UIApplication, UIFrameworkConfig } from "aurelia-ui-framework";
+import { UIApplication, UIFrameworkConfig } from "sunshower-aire";
 import { auconfig } from "../jest-pretest";
 
-describe("aurelia-ui-framework test", () => {
+describe("sunshower-aire test", () => {
   let component;
 
   const AppBaseUrl = "/api";

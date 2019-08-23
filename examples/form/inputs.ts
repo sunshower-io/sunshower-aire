@@ -6,7 +6,7 @@
  */
 import AVATAR_F from "@images/avatar-female.svg";
 import AVATAR_M from "@images/avatar-male.svg";
-import { Countries } from "aurelia-ui-framework";
+import { Countries } from "sunshower-aire";
 import zxcvbn from "zxcvbn";
 
 export class InputPage {

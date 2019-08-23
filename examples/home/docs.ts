@@ -7,7 +7,7 @@
 
 import { autoinject, computedFrom } from "aurelia-framework";
 import { Router, RouterConfiguration } from "aurelia-router";
-import { UIApplication } from "aurelia-ui-framework";
+import { UIApplication } from "sunshower-aire";
 import { ButtonRoutes } from "../buttons/routes";
 import { DataRoutes } from "../data/routes";
 import { FormRoutes } from "../form/routes";

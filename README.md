@@ -3,17 +3,17 @@
 
 ---
 
-Demo Site: [https://aurelia-ui-framework.herokuapp.com](https://aurelia-ui-framework.herokuapp.com)
+Demo Site: [https://sunshower-aire.herokuapp.com](https://sunshower-aire.herokuapp.com)
 
 ---
 
-![Stars](https://img.shields.io/github/stars/adarshpastakia/aurelia-ui-framework.svg?logoColor=blue&style=social&logo=github "GitHub Stars")
-![Forks](https://img.shields.io/github/forks/adarshpastakia/aurelia-ui-framework.svg?logoColor=blue&style=social&logo=github "GitHub Forks")
-![Issues](https://img.shields.io/github/issues/adarshpastakia/aurelia-ui-framework.svg?logoColor=blue&style=social&logo=github "GitHub Issues")
+![Stars](https://img.shields.io/github/stars/adarshpastakia/sunshower-aire.svg?logoColor=blue&style=social&logo=github "GitHub Stars")
+![Forks](https://img.shields.io/github/forks/adarshpastakia/sunshower-aire.svg?logoColor=blue&style=social&logo=github "GitHub Forks")
+![Issues](https://img.shields.io/github/issues/adarshpastakia/sunshower-aire.svg?logoColor=blue&style=social&logo=github "GitHub Issues")
 
-![Build](https://img.shields.io/travis/adarshpastakia/aurelia-ui-framework/master.svg?style=popout-square&logo=travis&label= "Travis Build")
-![Coverage](https://img.shields.io/codecov/c/github/adarshpastakia/aurelia-ui-framework/master.svg?style=popout-square&logo=codecov&label= "Code Coverage")
-![NPM Release](https://img.shields.io/npm/v/aurelia-ui-framework/next.svg?style=popout-square&logo=npm&label= "NPM Release")
+![Build](https://img.shields.io/travis/adarshpastakia/sunshower-aire/master.svg?style=popout-square&logo=travis&label= "Travis Build")
+![Coverage](https://img.shields.io/codecov/c/github/adarshpastakia/sunshower-aire/master.svg?style=popout-square&logo=codecov&label= "Code Coverage")
+![NPM Release](https://img.shields.io/npm/v/sunshower-aire/next.svg?style=popout-square&logo=npm&label= "NPM Release")
 
 ---
 
@@ -29,17 +29,17 @@ Demo Site: [https://aurelia-ui-framework.herokuapp.com](https://aurelia-ui-frame
 
   - NPM
     
-    `npm i aurelia-ui-framework`
+    `npm i sunshower-aire`
   
   - Yarn
   
-    `yarn add aurelia-ui-framework`
+    `yarn add sunshower-aire`
 
 * Using plugin as local link
 
-  `aurelia-ui-framework$> npm link`
+  `sunshower-aire$> npm link`
 
-  `project$> npm link aurelia-ui-framework`
+  `project$> npm link sunshower-aire`
 
   > webpack.config 
   > ```

@@ -9,21 +9,18 @@ html.theme-light
     // imported CSS are concatenated and added automatically
     link(rel="stylesheet" href="/styles/splash.css")
   body
-    html
-      body
-        section#aire-splash
-          .left
-            div.wrapper
-              .spinner
-                i
-                i
-                i
-          .right
-            h1 Aire
-            h2 Powerful Components for Beautiful Applications
-
-
+    section#aire-splash
+      .left
+        div.wrapper
+          .spinner
+            i
+            i
+            i
+      .right
+        h1 Aire
+        h2 Powerful Components for Beautiful Applications
     div(aurelia-app="main")
+
     //<% if (htmlWebpackPlugin.options.metadata.server) { %>
     //<script src="/webpack-dev-server.js"></script>
     //<% } %>

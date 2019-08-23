@@ -6,16 +6,16 @@
  */
 
 export class StartPage {
-  protected install = `npm install aurelia-ui-framework@next --save`;
+  protected install = `npm install sunshower-aire@next --save`;
 
   protected configure = `import { PLATFORM } from "aurelia-pal";
-import { UIFrameworkConfig, UIResources } from "aurelia-ui-framework";
+import { UIFrameworkConfig, UIResources } from "sunshower-aire";
 
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
-    .plugin(PLATFORM.moduleName("aurelia-ui-framework"), (config: UIFrameworkConfig) => {
+    .plugin(PLATFORM.moduleName("sunshower-aire"), (config: UIFrameworkConfig) => {
       config
         .setApiBaseUrl("/api")
         .setKeyValue("title", "Application Title")

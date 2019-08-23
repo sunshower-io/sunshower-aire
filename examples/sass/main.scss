@@ -2,22 +2,25 @@
 // @version   : 5.0.0
 // @copyright : 2019
 // @license   : MIT
-@import "sass/mdi-icons";
-@import "sass/flag-icons";
-@import "sass/aurelia-ui-framework";
+//@import "sass/mdi-icons";
+//@import "sass/flag-icons";
+//@import "sass/sunshower-aire";
+//
+//.theme-light {
+//  @import "sass/light-theme";
+//  @import "./blockquote";
+//  @import "./code-block";
+//  @import "./doc-styles";
+//  @import "./home-styles";
+//}
+//
+//.theme-dark {
+//  @import "sass/dark-theme";
+//  @import "./blockquote";
+//  @import "./code-block";
+//  @import "./doc-styles";
+//  @import "./home-styles";
+//}
 
-.theme-light {
-  @import "sass/light-theme";
-  @import "./blockquote";
-  @import "./code-block";
-  @import "./doc-styles";
-  @import "./home-styles";
-}
-
-.theme-dark {
-  @import "sass/dark-theme";
-  @import "./blockquote";
-  @import "./code-block";
-  @import "./doc-styles";
-  @import "./home-styles";
-}
+@import "@base/variables.scss";
+@import "@base/uikit-theme.scss";

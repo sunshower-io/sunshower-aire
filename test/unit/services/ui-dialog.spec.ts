@@ -8,7 +8,7 @@
 import { bootstrap } from "aurelia-bootstrapper";
 import { Container } from "aurelia-framework";
 import { StageComponent } from "aurelia-testing";
-import { UIDialogService } from "aurelia-ui-framework";
+import { UIDialogService } from "sunshower-aire";
 import { UIInternal } from "../../../src/utils/ui-internal";
 import { auconfig } from "../../jest-pretest";
 import {

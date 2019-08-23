@@ -1,25 +1,28 @@
 /// <reference types="aurelia-loader-webpack/src/webpack-hot-interface"/>
-import LOGO                  from "@images/logo.png";
-import { Aurelia, ViewLocator }           from "aurelia-framework";
-import { PLATFORM }          from "aurelia-pal";
-import { UIFrameworkConfig } from "aurelia-ui-framework";
-import { App }               from "./app";
-import environment           from "./environment";
-// import "./sass/main.scss";
+import LOGO                   from "@images/logo.png";
+import {Aurelia, ViewLocator} from "aurelia-framework";
+import {PLATFORM}             from "aurelia-pal";
+import {UIFrameworkConfig}    from "aire";
+// import {UIFrameworkConfig}    from "sunshower-aire";
+import {App}                  from "./app";
+import environment            from "./environment";
 
-export function configure(aurelia: Aurelia) {
+import "./sass/main.scss";
+
+export function configure(aurelia : Aurelia) {
   aurelia.use
-    .standardConfiguration()
-    .plugin(PLATFORM.moduleName("aurelia-validation"))
-    .plugin(PLATFORM.moduleName("aurelia-ui-virtualization"))
-    .plugin(PLATFORM.moduleName("aurelia-ui-framework"), (config: UIFrameworkConfig) => {
-      config
-        .setKeyValue("title", "Aurelia UI Framework")
-        .setKeyValue("subtitle", "A bespoke UI Framework for business applications")
-        .setKeyValue("logo", LOGO)
-        .useStandardResources();
-    })
-    .feature(PLATFORM.moduleName("resources/index"));
+         .standardConfiguration()
+         .plugin(PLATFORM.moduleName("aurelia-validation"))
+         .plugin(PLATFORM.moduleName("aurelia-ui-virtualization"))
+         // .plugin(PLATFORM.moduleName('aire'))
+         .plugin(PLATFORM.moduleName("aire"), (config : UIFrameworkConfig) => {
+           config
+             .setKeyValue("title", "Aurelia UI Framework")
+             .setKeyValue("subtitle", "A bespoke UI Framework for business applications")
+             .setKeyValue("logo", LOGO)
+             .useStandardResources();
+         })
+         .feature(PLATFORM.moduleName("resources/index"));
 
   // Uncomment the line below to enable animation.
   aurelia.use.plugin(PLATFORM.moduleName("aurelia-animator-css"));
@@ -45,5 +48,8 @@ export function configure(aurelia: Aurelia) {
   return aurelia
     .start()
     .then(() => aurelia.setRoot(App))
-    .then(() => document.querySelector("#aire-splash").remove());
+    .then(() => {
+      document.body.style.backgroundImage = 'none';
+      // document.querySelector("#aire-splash").remove();
+    });
 }

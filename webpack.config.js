@@ -22,6 +22,11 @@ const imagesDir = path.resolve(__dirname, "images");
 const nodeModulesDir = path.resolve(__dirname, "node_modules");
 const baseUrl = "/";
 
+
+// change this for new kit support
+
+const baseKit = path.resolve(__dirname, "node_modules/uikit/src/scss");
+
 const cssRules = [{loader: "css-loader"}];
 
 module.exports = ({production, server, extractCss, coverage, analyze, karma} = {}) => ({
@@ -34,14 +39,18 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
       "zxcvbnm": path.resolve(__dirname, "node_modules/zxcvbnm"),
       "aurelia-binding": path.resolve(__dirname, "node_modules/aurelia-binding"),
       sass: sassDir,
+      "@base": baseKit,
       "@images": imagesDir,
-      "aurelia-ui-framework$": path.resolve(frameworkDir, "aurelia-ui-framework"),
-      "aurelia-ui-framework": frameworkDir
+      "aire$": path.resolve(frameworkDir, "aire"),
+      "aire": path.resolve(frameworkDir, "aire"),
+      // "sunshower-aire$": path.resolve(frameworkDir, "sunshower-aire"),
+      // "sunshower-aire": frameworkDir
     }
   },
   entry: {
     app: ["aurelia-bootstrapper"],
-    framework: ["aurelia-ui-framework"],
+    // framework: ["sunshower-aire"],
+    framework: ["aire"],
     vendor: ["aurelia-framework"]
   },
   mode: production ? "production" : "development",
@@ -176,7 +185,7 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
             loader: "pug-html-loader",
             options: {
               data: {
-                metadata: { title, server, baseUrl }
+                metadata: {title, server, baseUrl}
               }
             }
           }
@@ -291,7 +300,8 @@ module.exports = ({production, server, extractCss, coverage, analyze, karma} = {
       new CopyWebpackPlugin([
         {from: "docs", to: "docs", ignore: [".*"]},
         {from: "images/logo.png", to: "images/logo.png", ignore: [".*"]},
-        {from: "styles", to: "styles", ignore: [".*"]}
+        {from: "styles", to: "styles", ignore: [".*"]},
+        {from: "assets", to: "assets", ignore: [".*"]}
       ])
     ), // ignore dot (hidden) files
     ...when(analyze, new BundleAnalyzerPlugin())

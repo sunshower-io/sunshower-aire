@@ -5,7 +5,7 @@
  * @license   : MIT
  */
 import { autoinject } from "aurelia-framework";
-import { Countries, UINotificationService } from "aurelia-ui-framework";
+import { Countries, UINotificationService } from "sunshower-aire";
 
 @autoinject()
 export class DatagridPage {

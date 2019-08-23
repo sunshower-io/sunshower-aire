@@ -4,7 +4,7 @@
  * @copyright : 2019
  * @license   : MIT
  */
-import { Countries } from "aurelia-ui-framework";
+import { Countries } from "sunshower-aire";
 
 export class ListsPage {
   protected countries = Countries.list;

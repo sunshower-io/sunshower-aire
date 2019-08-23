@@ -5,7 +5,7 @@
  * @license   : MIT
  */
 
-import { UIFormat } from "aurelia-ui-framework";
+import { UIFormat } from "sunshower-aire";
 
 describe("ui-format", () => {
   it("should format date", done => {

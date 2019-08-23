@@ -6,7 +6,7 @@
  */
 
 export class ThemePage {
-  protected theming = `@import "~aurelia-ui-framework/sass/colors";
+  protected theming = `@import "~sunshower-aire/sass/colors";
 
 $primary: $indigo;
 $secondary: $pink;
@@ -27,6 +27,6 @@ $base-invert: $black; // Change to $white for dark theme
 //* $base-color: mix($gray, $base-invert, 15%);
 //**
 
-@import "~aurelia-ui-framework/sass/aurelia-ui-framework";
+@import "~sunshower-aire/sass/sunshower-aire";
 `;
 }

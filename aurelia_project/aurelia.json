@@ -1,5 +1,5 @@
 {
-  "name": "aurelia-ui-framework",
+  "name": "sunshower-aire",
   "type": "project:application",
   "bundler": {
     "id": "webpack",

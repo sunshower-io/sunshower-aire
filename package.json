@@ -1,21 +1,21 @@
 {
-  "name": "aurelia-ui-framework",
+  "name": "sunshower-aire",
   "description": "An Aurelia UI/UX framework",
   "version": "5.0.0-beta.3",
   "keywords": [
     "ui-framework",
     "desktop-framework",
-    "aurelia-ui-framework"
+    "sunshower-aire"
   ],
-  "homepage": "https://aurelia-ui-framework.herokuapp.com",
+  "homepage": "https://sunshower-aire.herokuapp.com",
   "bugs": {
-    "url": "https://github.com/adarshpastakia/aurelia-ui-framework/issues"
+    "url": "https://github.com/adarshpastakia/sunshower-aire/issues"
   },
   "license": "MIT",
   "author": "Adarsh Pastakia <adarshpastakia@outlook.com> (http://adarshpastakia.github.io/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adarshpastakia/aurelia-ui-framework"
+    "url": "https://github.com/adarshpastakia/sunshower-aire"
   },
   "dependencies": {
     "aurelia-binding": "^2.3.1",
@@ -53,6 +53,7 @@
     "aurelia-loader-nodejs": "^1.0.1",
     "aurelia-pal-nodejs": "^1.1.1",
     "aurelia-polyfills": "^1.3.4",
+    "aurelia-router": "^1.7.1",
     "aurelia-testing": "^1.0.0",
     "aurelia-tools": "^2.0.0",
     "aurelia-webpack-plugin": "^3.0.0",
@@ -116,7 +117,7 @@
     "testFailureExitCode": 0,
     "moduleNameMapper": {
       "^aurelia-binding$": "<rootDir>/node_modules/aurelia-binding",
-      "^aurelia-ui-framework$": "<rootDir>/src/aurelia-ui-framework.ts"
+      "^sunshower-aire$": "<rootDir>/src/sunshower-aire.ts"
     },
     "modulePaths": [
       "<rootDir>/src",
@@ -175,8 +176,8 @@
     "bump-version": "npm --no-git-tag-version version",
     "release": "npm run dist && npm run bump-version"
   },
-  "typings": "dist/typings/aurelia-ui-framework.d.ts",
-  "main": "dist/commonjs/aurelia-ui-framework.js",
-  "module": "dist/es2015/aurelia-ui-framework.js",
-  "browser": "dist/umd/aurelia-ui-framework.js"
+  "typings": "dist/typings/sunshower-aire.d.ts",
+  "main": "dist/commonjs/sunshower-aire.js",
+  "module": "dist/es2015/sunshower-aire.js",
+  "browser": "dist/umd/sunshower-aire.js"
 }
