@@ -44,7 +44,7 @@
     "@types/lodash": "^4.14.123",
     "@types/node": "^10.14.6",
     "@types/webpack": "^4.4.29",
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "acorn-dynamic-import": "^4.0.0",
     "apply-loader": "^2.0.0",
     "aurelia-animator-css": "^1.0.4",
