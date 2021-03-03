@@ -81,7 +81,7 @@
     "opn": "^5.5.0",
     "plugin-error": "^1.0.1",
     "prettier": "^1.17.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "rimraf": "^2.6.3",
     "rollup": "^1.1.0",
     "rollup-plugin-html": "^0.2.1",
