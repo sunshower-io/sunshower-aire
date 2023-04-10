@@ -26,7 +26,7 @@
     "aurelia-validation": "^1.4.0",
     "date-fns": "^2.0.0-alpha.27",
     "kramed": "^0.5.6",
-    "libphonenumber-js": "^1.7.16",
+    "libphonenumber-js": "^1.10.26",
     "numeral": "^2.0.6",
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",
